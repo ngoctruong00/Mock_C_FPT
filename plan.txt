@@ -1,0 +1,9 @@
+3-3
+Tìm hiểu về flowchar 30'
+Tìm hiểu về github 1h30'
+Vẽ flowchart 1h'
+Viết code theo flowchart 5h
+
+5-3
+Viết code theo flowchart 8h
+

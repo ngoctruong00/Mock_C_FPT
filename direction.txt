@@ -1,0 +1,11 @@
+hướng dẫn trò chơi
+1. khi bắt đầu khởi động, máy tính sẽ tự random 1 số bất kì từ 0 đến 9999
+2. người chơi nhập tên 
+3. người chơi đoán và nhập 1 số từ 0 đến 9999
+trong trường hợp có chữ số trùng với số được random thì chữ số đố sẽ được hiển thì còn nếu không đúng thì màn hình sẽ hiển thì "-"
+4. máy sẽ yêu cầu người chơi đoná cho tới khi đúng số random và hỏi người chơi có muốn chơi lại không?
+ví dụ:
+số random = 1234;
+số người chơi đoán là 1245
+máy sẽ in ra là 12-- và yêu cầu người chơi đoán tiếp
+nếu người chơi đoán không trùng chữ số nào thì máy sẽ in ra ----
