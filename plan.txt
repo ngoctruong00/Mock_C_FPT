@@ -7,3 +7,7 @@ Viết code theo flowchart 5h
 5-3
 Viết code theo flowchart 8h
 
+6-3
+Done code game
+vẽ sequence diagram
+vẽ hoàn chỉnh flowchart
