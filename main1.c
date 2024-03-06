@@ -74,9 +74,16 @@ void compare_magicNumber(struct Node* current, int a[]){
     // Enter number
     do{
         
-
+		printf("Number Guesting is 0 to 9999\n");
+		nhaplai:
         printf("Enter number you guest: ");
         scanf("%d",&guest_number);
+        int b = guest_number / 1000;
+        if(b > 9){
+			printf("You enter the number bigger the random number\n");
+			printf("Enter again\n");
+			goto nhaplai;
+		}  
         Devide_number(check,guest_number);    
 
         // Check the random number is the same
