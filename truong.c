@@ -13,29 +13,29 @@ struct Node{
     float Score;
 };
 
-int compare_name(struct Node* New_player,const char *filename){
-    FILE *fil = fopen(filename,"r");
-    if(fil == NULL){
-        printf("FAIL: Open fail");
-        exit(1);
-    }
-    char name[MAX];
-    int score;
-    // Rewind file pointer to the beginning
-    rewind(fil);
-	while(fscanf(fil, "%s %f",name,&score) == 2) {
-//		printf("Name: %s\n",name);
-//		printf("Namemoinhap: %s",New_player->Player);
-        if(strcmp(New_player->Player, name) == 0){
-            printf("This name is already in use\n");
-            fclose(fil);
-            return 1;
-        }
-    }
-    printf("Compared \n");
-    fclose(fil);
-    return 0;
-}
+//int compare_name(struct Node* New_player,const char *filename){
+//    FILE *fil = fopen(filename,"r");
+//    if(fil == NULL){
+//        printf("FAIL: Open fail");
+//        exit(1);
+//    }
+//    char name[MAX];
+//    int score;
+//    // Rewind file pointer to the beginning
+//    rewind(fil);
+//	while(fscanf(fil, "%s %f",name,&score) == 2) {
+////		printf("Name: %s\n",name);
+////		printf("Namemoinhap: %s",New_player->Player);
+//        if(strcmp(New_player->Player, name) == 0){
+//            printf("This name is already in use\n");
+//            fclose(fil);
+//            return 1;
+//        }
+//    }
+//    printf("Compared \n");
+//    fclose(fil);
+//    return 0;
+//}
 
 
 struct Node* Add_player(){
@@ -45,14 +45,14 @@ sua:
         printf("Fail: Memory allocation fail");
         return NULL; // Tr? v? NULL n?u không th? c?p phát b? nh?
     }
-    // Nh?p tên ngư?i chơi
+    // Nh?p tên ngu?i choi
     printf("Enter Your Player: ");
     scanf("%s",New_player->Player);
     New_player->Score = 0;
-    if(compare_name(New_player,"Player.txt") == 1){
-        free(New_player); // N?u tên đ? t?n t?i, gi?i phóng b? nh? và th? l?i
-        goto sua;
-    }
+//    if(compare_name(New_player,"Player.txt") == 1){
+//        free(New_player); // N?u tên d? t?n t?i, gi?i phóng b? nh? và th? l?i
+//        goto sua;
+//    }
     return New_player;
 }
 
@@ -101,12 +101,21 @@ void compare_magicNumber(struct Node* current, int a[]){
 			goto nhaplai;
 		}
         int b = guest_number / 1000;
+        Devide_number(check,guest_number);
         if(b > 9){
 			printf("You enter the number bigger the random number\n");
 			printf("Enter again\n");
 			goto nhaplai;
 		}
-		if(guest_number < 1000){
+		if(guest_number < 1000 && b != 0 + b){
+			printf("Enter a 4-digit number\n");
+			goto nhaplai;
+		}
+		if(guest_number < 100 && b != 00 + b){
+			printf("Enter a 4-digit number\n");
+			goto nhaplai;
+		}
+		if(guest_number < 10 && b != 000 + b){
 			printf("Enter a 4-digit number\n");
 			goto nhaplai;
 		}
@@ -130,7 +139,7 @@ void compare_magicNumber(struct Node* current, int a[]){
 void savetofile(struct Node* current){
     FILE *file = fopen("Player.txt","a+");
     if(file == NULL){
-        printf("FAIL: Open fail");
+        printf("FAIL: Open fail11111");
         exit(1);
     }
 //    while(current != NULL){
@@ -140,7 +149,7 @@ void savetofile(struct Node* current){
     fclose(file);
 }
 void printtofile(const char *filename){
-    FILE *file = fopen(filename,"r");
+    FILE *file = fopen(filename,"a+");
     if(file == NULL){
         printf("FAIL: Open fail");
         exit(1);
